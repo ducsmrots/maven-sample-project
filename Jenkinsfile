@@ -18,7 +18,7 @@ pipeline {
                 container('zap') {
                     script {
                         // Start ZAP in daemon mode
-                        zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config gui.enable=false
+                        sh "zap.sh -daemon -host 0.0.0.0 -port 8090 -config api.disablekey=true -config gui.enable=false"
                         
                         // Wait for ZAP to start
                         sleep(time: 30, unit: 'SECONDS')
